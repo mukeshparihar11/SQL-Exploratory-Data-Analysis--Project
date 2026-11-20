@@ -3,7 +3,8 @@
 -- Script Purpose:
 
 --     This script creates a new database named "DataWarehouseAnalytics" after checking if it already exists.
---     If the database exists, it is dropped and recreated. Additionally, 
+--     If the database exists, it is dropped and recreated. Additionally,
+--     this script creates the tables dim_customers,dim_products and fact_sales. 
 
 
 -- # Drop and recreate the 'DataWarehouseAnalytics' database
