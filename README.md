@@ -9,6 +9,14 @@ customers, products and sales to answer business questions.
 The data follows a **star schema**: one fact table connected to two
 dimension tables.
 
+## Project Goals
+
+- Understand the structure and quality of the data
+- Measure key business numbers (sales, orders, customers, quantity)
+- Compare performance across countries, categories and customer groups
+- Rank the best and worst performing products and customers
+
+  
 | Table | Type | Rows | Description |
 |-------|------|------|-------------|
 | `dim_customers` | Dimension | 18,484 | Customer details: country, gender, marital status, birthdate |
@@ -16,10 +24,18 @@ dimension tables.
 | `fact_sales` | Fact | 60,398 | Sales transactions: order, ship and due dates, sales amount, quantity, price |
 
 **Relationships**
+
+dim_customers ──┐
+                ├──< fact_sales
+dim_products  ──┘
+```
+
 - `fact_sales.customer_key` → `dim_customers.customer_key`
 - `fact_sales.product_key` → `dim_products.product_key`
 
+
 **Quick facts**
+
 - Order dates range from **December 2010 to January 2014**
 - 27,659 unique orders
 - Customers come from 6 countries
@@ -69,7 +85,12 @@ SQL-Exploratory-Data-Analysis--Project/
 ## Tools Used
 
 - MySQL
-- SQL: joins, aggregate functions, GROUP BY, window functions,CTE,Sub Query, Case Statement
+- Joins across fact and dimension tables
+- Aggregate functions: `SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`
+- `GROUP BY` and `ORDER BY`
+- Date functions: `YEAR()`, `DATE_FORMAT()`, `TIMESTAMPDIFF()`
+- Window functions: `lag()`, `ROW_NUMBER()`
+- joins, aggregate functions, GROUP BY, window functions,CTE,Sub Query, Case Statement
 
 
 **Mukesh Parihar**
