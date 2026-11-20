@@ -1,6 +1,4 @@
-
-
-                --  Change Over Time Analysis
+  --  Change Over Time Analysis
 
 -- Purpose:
 --     - To track trends, growth, and changes in key metrics over time.
