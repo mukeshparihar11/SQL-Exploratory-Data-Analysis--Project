@@ -1,4 +1,5 @@
- -- Create Database and Schemas
+
+-- Create Database and Schemas
 
 -- Script Purpose:
 
